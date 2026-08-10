@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرب الكتابة السريعة | TypeMaster Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- الهيدر واللوجو -->
+        <header class="header">
+            <div class="logo">
+                <span class="icon">⌨️</span>
+                <h1>طباعة<span>Pro</span></h1>
+            </div>
+            <div class="lang-selector">
+                <button id="btn-ar" class="lang-btn active" onclick="setLanguage('ar')">العربية</button>
+                <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">English</button>
+            </div>
+        </header>
+
+        <!-- لوحة الإحصائيات (السرعة والدقة والوقت) -->
+        <section class="stats-card">
+            <div class="stat-item">
+                <span class="stat-label">السرعة (WPM)</span>
+                <span id="stat-wpm" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">الدقة</span>
+                <span id="stat-accuracy" class="stat-value">100%</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">الوقت</span>
+                <span id="stat-time" class="stat-value">00:00</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">المستوى</span>
+                <select id="lesson-select" class="lesson-select" onchange="changeLesson()"></select>
+            </div>
+        </section>
+
+        <!-- منطقة عرض النص للتمرين -->
+        <main class="typing-area">
+            <div id="text-display" class="text-display"></div>
+            <div class="controls">
+                <button id="btn-restart" class="btn-action" onclick="resetLesson()">🔄 إعادة التدريب</button>
+            </div>
+        </main>
+
+        <!-- الكيبورد الافتراضي للتوجيه -->
+        <section class="keyboard-container">
+            <div id="virtual-keyboard" class="keyboard"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
